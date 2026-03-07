@@ -1,0 +1,46 @@
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+:root {
+  --Orange: hsl(26, 100%, 55%);
+  --Pale-orange: hsl(25, 100%, 94%);
+  --Very-dark-blue: hsl(220, 13%, 13%);
+  --Dark-grayish-blue: hsl(219, 9%, 45%);
+  --Grayish-blue: hsl(220, 14%, 75%);
+  --Light-grayish-blue: hsl(223, 64%, 98%);
+  --White: hsl(0, 0%, 100%);
+  --Black: hsl(0, 0%, 0%);
+}
+
+/*Fonts*/
+
+/* kumbh-sans-regular - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Kumbh Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/kumbh-sans-v27-latin-regular.woff2') format('woff2');
+}
+/* kumbh-sans-700 - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Kumbh Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/kumbh-sans-v27-latin-700.woff2') format('woff2');
+}
+
+
+html{
+    font-family:"Kumbh Sans";
+    font-size:16px;
+}
+body{
+    background: var(--White);
+
+}
