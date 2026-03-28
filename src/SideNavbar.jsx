@@ -3,7 +3,7 @@ function SideNavbar({ setShowMenu }) {
     <div className="side-navbar">
       <img
         src="./icon-close.svg"
-        alt="close-icon"
+        alt="close"
         className="cross-icon"
         onClick={() => setShowMenu(false)}
       />

@@ -1,8 +1,13 @@
 import { useState } from "react";
 import SideNavbar from "./SideNavbar";
+import Cart from "./Cart";
 
-function Navbar() {
+function Navbar({ cart, showCart, setShowCart }) {
   const [showMenu, setShowMenu] = useState(false);
+
+  function toggleCart() {
+    setShowCart((prev) => !prev);
+  }
 
   return (
     <>
@@ -12,6 +17,8 @@ function Navbar() {
           <SideNavbar setShowMenu={setShowMenu} />
         </>
       )}
+
+      {showCart && <Cart cart={cart} />}
 
       <div className="navbar">
         <div>
@@ -34,11 +41,16 @@ function Navbar() {
         </div>
 
         <div>
-          <img
-            className="cart-icon icon"
-            src="./icon-cart.svg"
-            alt="cart-icon"
-          />
+          <div>
+            <img
+              className="cart-icon icon"
+              src="./icon-cart.svg"
+              alt="cart-icon"
+              onClick={toggleCart}
+            />
+            {cart.quantity != 0 && <div className="cart-items-count">{cart.quantity}</div>}
+           
+            </div>
           <img
             className="profile-icon icon"
             src="./image-avatar.png"

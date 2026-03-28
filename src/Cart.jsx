@@ -1,36 +1,52 @@
-function Cart() {
-  return (
-    <>
-      <div className="price-details">
-        <div className="product-price-with-discount">
-          <p className="product-current-price">$125.00</p>
-          <div className="product-discount">50%</div>
-        </div>
-        <p className="product-original-price">$250.00</p>
-      </div>
-      <div className="add-to-cart-and-btns">
-        <div className="cart-controls">
-          <div className="cart-inc-dec">
-            <img
-              className="cart-inc-btn cart-btn"
-              src="./icon-minus.svg"
-              alt="decrement  "
-            />
-            <p className="cart-items">0</p>
-            <img
-              className="cart-dec-btn cart-btn"
-              src="./icon-plus.svg"
-              alt="increment"
-            />
+function Cart({ cart }) {
+    const total = cart.quantity * cart.price;
+
+    return (
+        <div className="cart-container">
+            <h1 className="cart-header">Cart</h1>
+
+
+
+            {cart.quantity === 0 ? (
+                <div className="in-cart-items">
+                    <p>Your cart is empty.</p></div>
+            ) : (
+                <div><div className="cart-item">
+                    <img src="./image-product-1.jpg" alt="product1" className="product-img-incart" />
+                    <div className="product-details-incart">
+                        <p className="product-name-incart">Fall Limited Edition Sneakers</p>
+                        <p>
+                            $ {cart.price} x {cart.quantity}
+
+                            <span className="total-price"> ${total}</span>
+                        </p>
+                    </div>
+                </div>
+
+                    <button className="checkout-btn">Checkout</button>
+                </div>
+            )}
+
+
+
+            {/* <div className="in-cart-items">
+        {cart.quantity === 0 ? (
+          <p>Your cart is empty.</p>
+        ) : (
+          <><div className="cart-item">
+            <img src="./image-product-1.jpg" alt="product1" className="product-img-incart" />
           </div>
+            <p>
+              $ {cart.price} x {cart.quantity}
+              <strong>$ {total}</strong>
+            </p>
+
+            <button>Checkout</button>
+          </>
+        )}
+      </div> */}
         </div>
-        <div className="add-to-cart">
-          <img src="./icon-cart.svg" alt="icon-cart" />
-          <p className="add-to-cart-btn">Add to cart</p>
-        </div>
-      </div>
-    </>
-  );
+    );
 }
 
 export default Cart;

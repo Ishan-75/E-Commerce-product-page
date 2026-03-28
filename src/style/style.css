@@ -201,3 +201,30 @@
   font-weight: 700;
   font-size: 0.9rem;
 }
+.cart-container {
+  position: absolute;
+  padding: 15px;
+  top: 90px;
+  left: 10px;
+  right: 10px; /* creates equal gap */
+  height: 30%;
+  background: white;
+  color: black;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  z-index: 2000;
+}
+.cart-container h1{
+  font-size: 16px;
+  font-weight: 700;
+}
+.in-cart-items{
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+   font-weight: 700;
+  font-size: 0.8rem;
+  color: var(--Dark-grayish-blue); 
+
+}
