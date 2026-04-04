@@ -1,24 +1,31 @@
-function ProductGallery() {
+import { useState } from "react";
+
+function ProductGallery({ setShowPreview, images, mainImage, setMainImage }) {
+
+ 
+
   return (
     <div className="product-image">
-      <img src="./image-product-1.jpg" alt="image-product-1" />
+      <img src={mainImage.full} alt={mainImage.full} className="main-img" onClick={()=> setShowPreview(true)} />
 
       <div className="image-section-desktop">
-        <img src="./image-product-1.jpg" alt="1" />
-        <img src="./image-product-2.jpg" alt="2" />
-        <img src="./image-product-3.jpg" alt="3" />
-        <img src="./image-product-4.jpg" alt="4" />
-      </div>
+        {images.map((img, index) => (
+          <div key={index} className="thumb-wrapper">
+            <img
+              src={img.thumb}
+              alt={`thumb-${index}`}
+              onClick={() => setMainImage(img)}
+              className="thumbnail-img"
+            />
 
-      <div className="nav-btn-left nav-btn-com">
-        <img src="./icon-previous.svg" alt="previous" />
-      </div>
-
-      <div className="nav-btn-right nav-btn-com">
-        <img src="./icon-next.svg" alt="next" />
+            {/* overlay */}
+            {mainImage.full === img.full && (
+              <div className="thumb-overlay"></div>
+            )}
+          </div>
+        ))}
       </div>
     </div>
   );
 }
-
 export default ProductGallery;

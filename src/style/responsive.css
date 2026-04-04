@@ -55,8 +55,8 @@
   .image-section-desktop {
     display: flex;
     gap: 14px;
-    width: 20%;
     margin-top: 20px;
+    width: 100%;
   }
 
   .add-to-cart-and-btns {
@@ -102,7 +102,6 @@
     padding: 15px;
     top: 90px;
     left: 67%;
-    /* creates equal gap */
     height: 25%;
     width: 25%;
     background: white;
@@ -147,6 +146,8 @@
   }
 
   .checkout-btn {
+    position: relative;
+    top: -20px;
     width: 100%;
     padding: 10px;
     border-radius: 10px;
@@ -197,17 +198,18 @@
     width: 40px;
     border-radius: 5px;
   }
-  .overlay-for-preview{
-  background: rgba(0,0,0,0.6);
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: 1500;
+
+  .overlay-for-preview {
+    background: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1500;
   }
 
-  .product-preview-overlay{
+  .product-preview-overlay {
     position: absolute;
     top: 20%;
     right: 30%;
@@ -215,17 +217,47 @@
     z-index: 2000;
     width: 40%;
   }
+
   .nav-btn-com-desk {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--Light-grayish-blue);
-  padding: 10px;
-  border-radius: 50%;
-}
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--Light-grayish-blue);
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
 
 
+  .main-img {
+    cursor: pointer;
+  }
+
+  .thumb-wrapper {
+    position: relative;
+    display: inline-block;
+  }
+
+  .thumbnail-img {
+    display: block;
+    border-radius: 10px;
+    width: 100%;
+    cursor: pointer;
+  }
+
+  .thumb-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.6);
+    border: 2px solid var(--Orange);
+    border-radius: 5px;
+    pointer-events: none;
+    z-index: 10;
+  }
 }
