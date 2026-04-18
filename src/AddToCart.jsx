@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function AddToCart({ setCart, setShowCart }) {
+function AddToCart({ setCart, setShowCart, cart }) {
   const [cartValue, setCartValue] = useState(0);
 
   const increment = () => {
@@ -16,13 +16,11 @@ function AddToCart({ setCart, setShowCart }) {
   const handleAddToCart = () => {
     if (cartValue === 0) return;
 
-    setCart((prev) => ({
-      ...prev,
-      quantity: prev.quantity + cartValue,
-    }));
+    setCart({
+      quantity: cartValue,
+      price: 125,
+    });
 
-    setCartValue(0);
-    setShowCart(true);
   };
 
   return (
@@ -38,21 +36,20 @@ function AddToCart({ setCart, setShowCart }) {
       <div className="add-to-cart-and-btns">
         <div className="cart-controls">
           <div className="cart-inc-dec">
-            <img
+            {/* <img
               className="cart-inc-btn cart-btn"
               src="./icon-minus.svg"
               alt="decrement"
               onClick={decrement}
-            />
+            /> */}
+            <button className="cart-btn" onClick={increment}>
+              <img src="./icon-minus.svg" alt="decrement" />
+            </button>
 
             <p className="cart-items">{cartValue}</p>
-
-            <img
-              className="cart-dec-btn cart-btn"
-              src="./icon-plus.svg"
-              alt="increment"
-              onClick={increment}
-            />
+            <button className="cart-btn" onClick={increment}>
+              <img src="./icon-plus.svg" alt="increment" />
+            </button>
           </div>
         </div>
 

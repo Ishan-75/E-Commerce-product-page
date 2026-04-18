@@ -48,7 +48,7 @@ function Navbar({ cart, showCart, setShowCart }) {
               alt="cart-icon"
               onClick={toggleCart}
             />
-            {cart.quantity != 0 && <div className="cart-items-count">{cart.quantity}</div>}
+            {cart.quantity !== 0 && <div className="cart-items-count">{cart.quantity}</div>}
            
             </div>
           <img

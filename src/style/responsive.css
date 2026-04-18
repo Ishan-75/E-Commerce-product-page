@@ -72,9 +72,19 @@
   }
 
   .cart-btn {
-    width: 12%;
-  }
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
+.cart-btn img {
+  width: 16px;
+  height: 16px;
+}
 
   .add-to-cart {
     width: 40%;
@@ -155,6 +165,7 @@
     border: none;
     font-weight: 700;
     font-size: 0.8rem;
+  font-family: 'Kumbh Sans';
     margin-top: 30px;
     cursor: pointer;
   }

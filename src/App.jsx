@@ -1,7 +1,6 @@
 import { useState } from "react";
 import Navbar from "./Navbar";
 import CartPage from "./CartPage";
-// import ProductPreview from "./ProductPreview";
 
 function App() {
   const [cart, setCart] = useState({
@@ -14,7 +13,7 @@ function App() {
   return (
     <>
       <Navbar cart={cart} showCart={showCart} setShowCart={setShowCart} />
-      <CartPage setCart={setCart} setShowCart={setShowCart} />
+      <CartPage setCart={setCart} setShowCart={setShowCart} cart={cart} />
 
     </>
   );

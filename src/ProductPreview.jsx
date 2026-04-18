@@ -1,23 +1,23 @@
-function ProductPreview({ setShowPreview, images, mainImage, setMainImage }) {
+function ProductPreview({ setShowPreview, images, prevImage, setPrevImage }) {
 
     const handleNext = (e) => {
-        const currentIndex = images.findIndex(img => img.full === mainImage.full);
+        const currentIndex = images.findIndex(img => img.full === prevImage.full);
         const nextIndex = (currentIndex + 1) % images.length;
-        setMainImage(images[nextIndex]);
+        setPrevImage(images[nextIndex]);
     };
 
 
     const handlePrev = (e) => {
-        const currentIndex = images.findIndex(img => img.full === mainImage.full);
+        const currentIndex = images.findIndex(img => img.full === prevImage.full);
         const prevIndex = (currentIndex - 1 + images.length) % images.length;
-        setMainImage(images[prevIndex]);
+        setPrevImage(images[prevIndex]);
     };
 
     return (
         <div className="overlay-for-preview" onClick={() => setShowPreview(false)}>
             <div className="preview-overlay" onClick={(e) => e.stopPropagation()}>
                 <img
-                    src={mainImage.full}
+                    src={prevImage.full}
                     alt="Preview"
                     className="product-preview-overlay"
                 />
